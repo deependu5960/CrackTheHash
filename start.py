@@ -18,6 +18,8 @@ if __name__ == "__main__":
         
 
         hash_pwd = input(f"\033[1;91m Enter Your Hash : \033[0m")
+        if hash_pwd.lower() =="exit":
+            exit()
         algo = identify_hash(hash_pwd)
         if algo:
             print(f"\033[1;92m{algo}\033[0m")
