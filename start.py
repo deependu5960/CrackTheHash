@@ -1,8 +1,13 @@
 from hash_identifier import identify_hash
 from crack import crack_pass
+import os
+import shutil
 
 if __name__ == "__main__":
     while True:
+        os.system("cls" if os.name == "nt" else "clear")
+        width = shutil.get_terminal_size(fallback=(80, 20)).columns
+
         banner = r'''
                                                                                           __    __
          _______  _____       ___      _______  _         _____   _                    __|  |__|  |__ 
@@ -12,9 +17,12 @@ if __name__ == "__main__":
         |______/ |_|  \_\ /__/   \__\ |______/ |_|\_\      |_|   |_| \_\ |____|          |__|   |__|
         
         '''
-        print(" " * 40)
-        print(f"\033[94m{banner}\033[0m")
-        print(" " * 40)
+        
+        print(" " * width)
+        print(f"\033[94m{banner.center(width)}\033[0m")
+        print(" " * width)
+        
+
         hash_pwd = input(f"\033[1;91m Enter Your Hash : \033[0m")
         algo = identify_hash(hash_pwd)
         if algo:
