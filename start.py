@@ -12,7 +12,9 @@ if __name__ == "__main__":
         |______/ |_|  \_\ /__/   \__\ |______/ |_|\_\      |_|   |_| \_\ |____|          |__|   |__|
         
         '''
+        print(" " * 40)
         print(f"\033[94m{banner}\033[0m")
+        print(" " * 40)
         hash_pwd = input(f"\033[1;91m Enter Your Hash : \033[0m")
         algo = identify_hash(hash_pwd)
         if algo:
